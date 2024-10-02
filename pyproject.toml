@@ -1,0 +1,40 @@
+[project]
+name = "nb-sensors"
+authors = [
+  {name = "Michael Rahnis", email = "mike@topomatrix.com"},
+]
+description = "Notebooks working with various sensor data"
+dynamic = ["version"]
+readme = "README.md"
+keywords = ["hobo", "mayfly", "timeseries"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3"
+]
+
+requires-python = ">=3.9"
+
+dependencies = [
+	"pandas",
+	"matplotlib",
+	"jupyterlab",
+	"notebook",
+	"openpyxl",
+	"pyarrow"
+]
+
+
+[project.urls]
+Homepage = "https://topomatrix.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/mrahnis/nb-sensors/nb-sensors.git"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["win-64", "osx-64", "osx-arm64"]
+
+[tool.pixi.environments]
+default = { solve-group = "default" }
+
+[tool.pixi.tasks]
